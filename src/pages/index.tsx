@@ -4,13 +4,18 @@ import Image from 'next/image'
 import { useIsSSR } from '../hooks/useIsSSR'
 import { SceneOne } from '../scenes/SceneOne'
 import projects from '../content/projects.json'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { mailTo } from '../utils/helpers'
 import { FadeIn } from '../animations/FadeIn'
+import smoothscroll from 'smoothscroll-polyfill'
 
 const Home: NextPage = () => {
     const projectsRef = useRef<any>()
     const heroRef = useRef<any>()
+
+    useEffect(() => {
+        smoothscroll.polyfill()
+    }, [])
 
     return (
         <div className="min-h-screen">
@@ -18,10 +23,10 @@ const Home: NextPage = () => {
                 <SceneOne />
                 <Loader />
             </section>
-            <FadeIn instant={true} delay={1} duration={2.5}>
+            <FadeIn instant={true} delay={0.33} duration={2}>
                 <button
                     onClick={() => projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                    className="absolute text-cyan-200 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-200 rounded-full p-3"
+                    className="absolute text-cyan-400 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -38,15 +43,15 @@ const Home: NextPage = () => {
             <div ref={projectsRef}></div>
             <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col px-10">
                 <div className="my-48 xl:my-80 md:my-60">
-                    <FadeIn duration={1.25} delay={0.1} direction="up">
-                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
+                    <FadeIn duration={1} direction="up">
+                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-3xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
                             FRONT END DEVELOPER
                         </h2>
                     </FadeIn>
                 </div>
                 <div className="flex flex-col w-full max-w-md mx-auto space-y-16 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
                     {projects.map((project, i) => (
-                        <FadeIn key={project.title} duration={1.25} delay={0.1} direction="up">
+                        <FadeIn key={project.title} duration={1} direction="up">
                             <div
                                 className={
                                     i % 2 !== 0
@@ -92,12 +97,12 @@ const Home: NextPage = () => {
 
             <section className="grid min-h-screen place-content-center bg-slate-900">
                 <div className="flex flex-col items-center my-24 xl:my-80 md:my-44 sm:my-32">
-                    <FadeIn duration={1.25} delay={0.1} direction="up">
+                    <FadeIn duration={1} direction="up">
                         <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-3xl sm:text-4xl lg:text-5xl   text-cyan-400">
                             CONTACT
                         </h2>
                     </FadeIn>
-                    <FadeIn duration={1.25} delay={0.5} direction="up">
+                    <FadeIn duration={1} delay={0.5} direction="up">
                         <ul className="flex flex-col items-center justify-center mt-10 space-y-6 sm:space-y-0 lg:font-thin lg:text-xl lg:space-y-0 lg:mt-28 lg:space-x-36 sm:space-x-10 sm:flex-row text-cyan-600">
                             <li>+46702082695</li>
                             <li>
@@ -117,7 +122,7 @@ const Home: NextPage = () => {
                     <FadeIn duration={1.25} delay={1} direction="up">
                         <button
                             onClick={() => heroRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                            className="lg:mt-28 mt-12 text-cyan-200  border-[1px] border-cyan-200 rounded-full p-3"
+                            className="lg:mt-32 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
