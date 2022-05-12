@@ -1,6 +1,6 @@
 import { Text } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 export function Title() {
     const { viewport } = useThree()
@@ -19,10 +19,6 @@ export function Title() {
         )
         textRef.current.position.set(state.mouse.x * 1.3, state.mouse.y * 0.5, 0)
     })
-
-    useEffect(() => {
-        console.log(viewport.width)
-    }, [viewport.width])
 
     return (
         <group position={[0, -1, 1]} scale={viewport.width > 20 ? 1 : viewport.width * 0.04}>

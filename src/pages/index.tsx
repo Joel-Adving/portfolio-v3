@@ -4,9 +4,11 @@ import Image from 'next/image'
 import { useIsSSR } from '../hooks/useIsSSR'
 import { SceneOne } from '../scenes/SceneOne'
 import projects from '../content/projects.json'
+import { useRef } from 'react'
 
 const Home: NextPage = () => {
     const [isSSR] = useIsSSR()
+    const projectsRef = useRef<any>()
 
     return (
         <div className="min-h-screen">
@@ -14,12 +16,27 @@ const Home: NextPage = () => {
             <section className="relative ">
                 <SceneOne />
             </section>
-            <button className="absolute text-cyan-200 translate-x-1/2 right-1/2 bottom-[8vh]">scroll down</button>
-            <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col px-6">
-                <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-4xl sm:text-5xl lg:text-5xl xl:text-6xl text-cyan-400 xl:my-80 md:my-60 my-44">
+            <button
+                onClick={() => projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                className="absolute text-cyan-200 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-200 rounded-full p-3"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
+                </svg>
+            </button>
+            <div ref={projectsRef}></div>
+            <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col px-10">
+                <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-4xl sm:text-5xl lg:text-5xl xl:text-6xl text-cyan-400 xl:my-80 md:my-60 my-48">
                     PROJECTS
                 </h2>
-                <div className="flex flex-col w-full max-w-md mx-auto space-y-12 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
+                <div className="flex flex-col w-full max-w-md mx-auto space-y-24 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
                     {projects.map((project, i) => (
                         <div
                             key={project.title}

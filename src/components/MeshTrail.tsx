@@ -1,11 +1,12 @@
-import * as React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Sphere, Trail } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 import { Mesh } from 'three'
 
 export function MeshTrail({ modifier }: any) {
     const { viewport } = useThree()
-    const sphere = React.useRef<Mesh>(null!)
+    const sphere = useRef<Mesh>(null!)
+
     useFrame(state => {
         if (viewport.width < 20) return
 
