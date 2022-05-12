@@ -1,32 +1,30 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { useIsSSR } from '../hooks/useIsSSR'
 import { SceneOne } from '../scenes/SceneOne'
 import projects from '../content/projects.json'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { mailTo } from '../utils/helpers'
 import { FadeIn } from '../animations/FadeIn'
-import smoothscroll from 'smoothscroll-polyfill'
 import { useGetGPUTier } from '../hooks/useGetGPUTier'
+import { useSmoothScrollPolyfill } from '../hooks/useSmoothScrollPolyfill'
 
 const Home: NextPage = () => {
     const projectsRef = useRef<any>()
     const heroRef = useRef<any>()
-    const { tier } = useGetGPUTier()
-
-    useEffect(() => {
-        smoothscroll.polyfill()
-    }, [])
+    const { GPUTier, isMobile } = useGetGPUTier()
+    useSmoothScrollPolyfill()
 
     return (
         <div className="min-h-screen">
             <section ref={heroRef} className="relative ">
-                {tier && tier > 0 ? (
+                {GPUTier && GPUTier > 0 ? (
                     <FadeIn instant={true} delay={1.25} duration={2.5}>
                         <div className="grid min-h-screen text-center place-content-center">
-                            <h1 className=" font-thin sm:tracking-[0.3em] text-center tracking-[0.2em]  text-4xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
-                                JOEL ADVING
-                            </h1>
+                            <div className={isMobile ? 'pb-[12vh]' : ' pb-6'}>
+                                <h1 className="font-thin sm:tracking-[0.3em] text-center tracking-[0.2em] text-4xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
+                                    JOEL ADVING
+                                </h1>
+                            </div>
                         </div>
                     </FadeIn>
                 ) : (
@@ -54,7 +52,7 @@ const Home: NextPage = () => {
             <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
                 <div className="my-48 xl:my-80 md:my-60">
                     <FadeIn duration={1} direction="up">
-                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-[0.3em] text-4xl sm:text-4xl lg:text-5xl xl:text-6xl text-cyan-400 sm:max-w-max max-w-min mx-auto">
+                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-[0.25em] text-4xl sm:text-4xl lg:text-5xl xl:text-6xl text-cyan-400 md:max-w-max max-w-min mx-auto">
                             FRONT END DEVELOPER
                         </h2>
                     </FadeIn>
@@ -128,7 +126,7 @@ const Home: NextPage = () => {
                         </ul>
                     </FadeIn>
 
-                    <FadeIn duration={1.25} delay={1} direction="up">
+                    <FadeIn duration={1} delay={0.75} direction="up">
                         <button
                             onClick={() => heroRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                             className="lg:mt-28 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
