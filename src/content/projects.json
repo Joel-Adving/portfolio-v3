@@ -10,7 +10,7 @@
     {
         "title": "Trell Flow",
         "description": "App for managing projects, big or small, group or solo.",
-        "stack": ["JavaScript", "React", "Firebase", "vanilla css"],
+        "stack": ["React", "Firebase", "vanilla css"],
         "webpage": "https://trell-flow.vercel.app/",
         "github": "https://github.com/Joel-Adving/trell-flow",
         "thumbnails": ["/images/trell-flow-1.png", "/images/trell-flow-2.png"]
@@ -18,7 +18,7 @@
     {
         "title": "VAC TRACKER",
         "description": "App for tracking cheaters vac/ban statuses of palyers I've met in the game cs:go.",
-        "stack": ["JavaScript", "Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
+        "stack": ["Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
         "webpage": "https://vac-list.vercel.app/",
         "github": "https://github.com/Joel-Adving/vac-list",
         "thumbnails": ["/images/vac-list-1.png", "/images/vac-list-2.png"]
