@@ -33,10 +33,10 @@ const Home: NextPage = () => {
             </button>
             <div ref={projectsRef}></div>
             <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col px-10">
-                <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-4xl sm:text-5xl lg:text-5xl xl:text-6xl text-cyan-400 xl:my-80 md:my-60 my-48">
-                    PROJECTS
+                <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400 xl:my-80 md:my-60 my-48">
+                    FRONT END DEVELOPER
                 </h2>
-                <div className="flex flex-col w-full max-w-md mx-auto space-y-24 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
+                <div className="flex flex-col w-full max-w-md mx-auto space-y-16 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
                     {projects.map((project, i) => (
                         <div
                             key={project.title}
@@ -77,13 +77,20 @@ const Home: NextPage = () => {
 
             <section className="grid min-h-screen place-content-center bg-slate-900">
                 <div className="my-24 xl:my-80 md:my-44 sm:my-32">
-                    <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-4xl sm:text-5xl lg:text-6xl  text-cyan-400">
+                    <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-3xl sm:text-4xl lg:text-5xl   text-cyan-400">
                         CONTACT
                     </h2>
 
-                    <ul className="flex flex-col items-center justify-center mt-10 space-y-2 lg:font-thin lg:text-xl md:space-y-0 lg:mt-24 lg:space-x-36 sm:space-x-10 sm:flex-row text-cyan-600">
+                    <ul className="flex flex-col items-center justify-center mt-10 space-y-6 sm:space-y-0 lg:font-thin lg:text-xl lg:space-y-0 lg:mt-28 lg:space-x-36 sm:space-x-10 sm:flex-row text-cyan-600">
                         <li>+46702082695</li>
-                        <li>joel.adving@gmail.com</li>
+                        <li>
+                            <button
+                                className="lg:font-thin"
+                                onClick={() => (window.location = 'mailto:joel.adving@gmail.com')}
+                            >
+                                joel.adving@gmail.com
+                            </button>
+                        </li>
                         <li>
                             <a href="https://www.linkedin.com/in/joel-adving-3385571a0/">Linkedin</a>
                         </li>

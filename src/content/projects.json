@@ -2,7 +2,7 @@
     {
         "title": "Grabbarna Grus",
         "description": "Web app for my group of friends that play League of Legends. Where we can track each others ranks, stats and match histories.",
-        "stack": ["Next.js", "Riot Games API", "Firebase", "Recoil", "Tailwind CSS"],
+        "stack": ["TypeScript", "Next.js", "Riot Games API", "Firebase", "Recoil", "Tailwind CSS"],
         "webpage": "https://www.grabbarnagrus.lol/",
         "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
         "thumbnails": ["/images/grabbarna-grus-3.png", "/images/grabbarna-grus-2.png", "/images/grabbarna-grus-1.png"]
@@ -10,7 +10,7 @@
     {
         "title": "Trell Flow",
         "description": "App for managing projects, big or small, group or solo.",
-        "stack": ["React", "Firebase"],
+        "stack": ["JavaScript", "React", "Firebase", "vanilla css"],
         "webpage": "https://trell-flow.vercel.app/",
         "github": "https://github.com/Joel-Adving/trell-flow",
         "thumbnails": ["/images/trell-flow-1.png", "/images/trell-flow-2.png"]
@@ -18,7 +18,7 @@
     {
         "title": "VAC TRACKER",
         "description": "App for tracking cheaters vac/ban statuses of palyers I've met in the game cs:go.",
-        "stack": ["Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
+        "stack": ["JavaScript", "Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
         "webpage": "https://vac-list.vercel.app/",
         "github": "https://github.com/Joel-Adving/vac-list",
         "thumbnails": ["/images/vac-list-1.png", "/images/vac-list-2.png"]
@@ -26,7 +26,7 @@
     {
         "title": "3D interactive music video",
         "description": "Three.js 3d interactive music video of POP/STARS by K/DA - League of Legends.",
-        "stack": ["Next.js", "Three.js", "react-three-fiber", "Tailwind CSS"],
+        "stack": ["TypeScript", "Next.js", "Three.js", "react-three-fiber", "Tailwind CSS"],
         "webpage": "https://league-kda-3d-show.vercel.app/",
         "github": "https://github.com/Joel-Adving/league-kda-3d-show",
         "thumbnails": ["/images/kda-1.png", "/images/kda-2.png", "/images/kda-3.png"]
