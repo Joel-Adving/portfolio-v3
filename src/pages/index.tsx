@@ -5,6 +5,7 @@ import { useIsSSR } from '../hooks/useIsSSR'
 import { SceneOne } from '../scenes/SceneOne'
 import projects from '../content/projects.json'
 import { useRef } from 'react'
+import { mailTo } from '../utils/helpers'
 
 const Home: NextPage = () => {
     const [isSSR] = useIsSSR()
@@ -84,10 +85,7 @@ const Home: NextPage = () => {
                     <ul className="flex flex-col items-center justify-center mt-10 space-y-6 sm:space-y-0 lg:font-thin lg:text-xl lg:space-y-0 lg:mt-28 lg:space-x-36 sm:space-x-10 sm:flex-row text-cyan-600">
                         <li>+46702082695</li>
                         <li>
-                            <button
-                                className="lg:font-thin"
-                                onClick={() => (window.location = 'mailto:joel.adving@gmail.com')}
-                            >
+                            <button onClick={() => mailTo('joel.adving@gmail.com')} className="lg:font-thin">
                                 joel.adving@gmail.com
                             </button>
                         </li>
