@@ -10,7 +10,7 @@ export function ResponsiveCanvas() {
             setSize(window.innerWidth, window.innerHeight)
         }
         return () => window.removeEventListener('resize', onWindowResize, false)
-    }, [])
+    })
 
     return <></>
 }

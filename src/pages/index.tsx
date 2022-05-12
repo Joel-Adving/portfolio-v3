@@ -46,9 +46,8 @@ const Home: NextPage = () => {
                 </div>
                 <div className="flex flex-col w-full max-w-md mx-auto space-y-16 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
                     {projects.map((project, i) => (
-                        <FadeIn duration={1.25} delay={0.1} direction="up">
+                        <FadeIn key={project.title} duration={1.25} delay={0.1} direction="up">
                             <div
-                                key={project.title}
                                 className={
                                     i % 2 !== 0
                                         ? 'flex lg:gap-12 flex-col-reverse lg:flex-row-reverse justify-center mr-auto lg:items-center'
@@ -77,7 +76,13 @@ const Home: NextPage = () => {
                                             : 'xl:max-w-xl md:max-w-md w-full '
                                     }
                                 >
-                                    <Image src={project.thumbnails[0]} width={1280} height={720} className="rounded " />
+                                    <Image
+                                        src={project.thumbnails[0]}
+                                        alt="Project card"
+                                        width={1280}
+                                        height={720}
+                                        className="rounded "
+                                    />
                                 </div>
                             </div>
                         </FadeIn>
