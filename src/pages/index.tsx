@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     return (
         <div className="min-h-screen">
             <section ref={heroRef} className="relative ">
-                {tier && tier === 0 ? (
+                {tier && tier > 0 ? (
                     <FadeIn instant={true} delay={1.25} duration={2.5}>
                         <div className="grid min-h-screen text-center place-content-center">
                             <h1 className=" font-thin sm:tracking-[0.3em] text-center tracking-[0.2em]  text-4xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
@@ -51,15 +51,15 @@ const Home: NextPage = () => {
                 </button>
             </FadeIn>
             <div ref={projectsRef}></div>
-            <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col px-10">
+            <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
                 <div className="my-48 xl:my-80 md:my-60">
                     <FadeIn duration={1} direction="up">
-                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-3xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
+                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-[0.3em] text-4xl sm:text-4xl lg:text-5xl xl:text-6xl text-cyan-400 sm:max-w-max max-w-min mx-auto">
                             FRONT END DEVELOPER
                         </h2>
                     </FadeIn>
                 </div>
-                <div className="flex flex-col w-full max-w-md mx-auto space-y-12 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
+                <div className="flex flex-col w-full max-w-md px-10 mx-auto space-y-12 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600">
                     {projects.map((project, i) => (
                         <FadeIn key={project.title} duration={1} direction="up">
                             <div
