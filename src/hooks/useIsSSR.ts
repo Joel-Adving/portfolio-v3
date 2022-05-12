@@ -7,5 +7,5 @@ export const useIsSSR = () => {
         setIsSSR(false)
     }, [])
 
-    return [isSSR]
+    return { isSSR }
 }

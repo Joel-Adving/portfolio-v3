@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Suspense, useEffect } from 'react'
-import { CameraShake, Sparkles } from '@react-three/drei'
+import { CameraShake, Loader, Sparkles, useDetectGPU } from '@react-three/drei'
 import { DepthOfField, EffectComposer, Noise } from '@react-three/postprocessing'
 import { MeshTrail } from '../components/MeshTrail'
 import { Ground } from '../components/Ground'
@@ -94,6 +94,7 @@ export function SceneOne() {
                     </FadeIn>
                 )}
             </Suspense>
+            <Loader />
         </div>
     )
 }

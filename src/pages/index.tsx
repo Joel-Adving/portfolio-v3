@@ -1,4 +1,3 @@
-import { Loader } from '@react-three/drei'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import { useIsSSR } from '../hooks/useIsSSR'
@@ -8,10 +7,12 @@ import { useEffect, useRef } from 'react'
 import { mailTo } from '../utils/helpers'
 import { FadeIn } from '../animations/FadeIn'
 import smoothscroll from 'smoothscroll-polyfill'
+import { useGetGPUTier } from '../hooks/useGetGPUTier'
 
 const Home: NextPage = () => {
     const projectsRef = useRef<any>()
     const heroRef = useRef<any>()
+    const { tier } = useGetGPUTier()
 
     useEffect(() => {
         smoothscroll.polyfill()
@@ -20,10 +21,19 @@ const Home: NextPage = () => {
     return (
         <div className="min-h-screen">
             <section ref={heroRef} className="relative ">
-                <SceneOne />
-                <Loader />
+                {tier && tier === 0 ? (
+                    <FadeIn instant={true} delay={1.25} duration={2.5}>
+                        <div className="grid min-h-screen text-center place-content-center">
+                            <h1 className=" font-thin sm:tracking-[0.3em] text-center tracking-[0.2em]  text-4xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
+                                JOEL ADVING
+                            </h1>
+                        </div>
+                    </FadeIn>
+                ) : (
+                    <SceneOne />
+                )}
             </section>
-            <FadeIn instant={true} delay={0.33} duration={2}>
+            <FadeIn instant={true} delay={1.25} duration={2.5}>
                 <button
                     onClick={() => projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                     className="absolute text-cyan-400 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
@@ -49,7 +59,7 @@ const Home: NextPage = () => {
                         </h2>
                     </FadeIn>
                 </div>
-                <div className="flex flex-col w-full max-w-md mx-auto space-y-16 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
+                <div className="flex flex-col w-full max-w-md mx-auto space-y-12 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600 ">
                     {projects.map((project, i) => (
                         <FadeIn key={project.title} duration={1} direction="up">
                             <div
@@ -60,7 +70,7 @@ const Home: NextPage = () => {
                                 }
                             >
                                 <div className="flex flex-col pb-28 lg:py-20 last:pb-0">
-                                    <h3 className="mt-4 mb-2 text-xl font-thin tracking-wider lg:text-3xl text-cyan-400">
+                                    <h3 className="mt-4 mb-2 text-xl tracking-wider lg:font-thin lg:text-3xl text-cyan-400">
                                         {project.title.toUpperCase()}
                                     </h3>
                                     <p className="lg:text-lg text-cyan-600">{project.description}</p>
@@ -74,21 +84,20 @@ const Home: NextPage = () => {
                                         </a>
                                     </div>
                                 </div>
-                                <div
-                                    className={
-                                        i === 1
-                                            ? 'xl:max-w-xl md:max-w-md opacity-70 w-full '
-                                            : 'xl:max-w-xl md:max-w-md w-full '
-                                    }
+                                <a
+                                    href={project.webpage}
+                                    className="w-full duration-200 hover:scale-[102%] xl:max-w-xl md:max-w-md "
                                 >
-                                    <Image
-                                        src={project.thumbnails[0]}
-                                        alt="Project card"
-                                        width={1280}
-                                        height={720}
-                                        className="rounded "
-                                    />
-                                </div>
+                                    <div className={i === 1 ? 'opacity-70 ' : ''}>
+                                        <Image
+                                            src={project.thumbnails[0]}
+                                            alt="Project card"
+                                            width={1280}
+                                            height={720}
+                                            className="rounded "
+                                        />
+                                    </div>
+                                </a>
                             </div>
                         </FadeIn>
                     ))}
@@ -122,7 +131,7 @@ const Home: NextPage = () => {
                     <FadeIn duration={1.25} delay={1} direction="up">
                         <button
                             onClick={() => heroRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                            className="lg:mt-32 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
+                            className="lg:mt-28 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

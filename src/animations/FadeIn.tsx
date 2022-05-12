@@ -35,13 +35,19 @@ export function FadeIn({
     } as Variants
 
     if (staggered) return <motion.div variants={fadeIn}>{children}</motion.div>
+    else if (instant)
+        return (
+            <motion.div variants={fadeIn} initial="hidden" animate="visible">
+                {children}
+            </motion.div>
+        )
     else
         return (
             <motion.div
                 variants={fadeIn}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: instant ? undefined : 'some' }}
+                viewport={{ once: true, amount: 'some' }}
             >
                 {children}
             </motion.div>
