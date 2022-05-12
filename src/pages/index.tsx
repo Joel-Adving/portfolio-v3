@@ -17,10 +17,10 @@ const Home: NextPage = () => {
     return (
         <div className="min-h-screen">
             <section ref={heroRef} className="relative ">
-                {GPUTier && GPUTier > 0 ? (
+                {GPUTier && GPUTier === 0 ? (
                     <FadeIn instant={true} delay={1.25} duration={2.5}>
                         <div className="grid min-h-screen text-center place-content-center">
-                            <div className={isMobile ? 'pb-[12vh]' : ' pb-6'}>
+                            <div className={isMobile ? 'pb-[13vh]' : ' pb-6'}>
                                 <h1 className="font-thin sm:tracking-[0.3em] text-center tracking-[0.2em] text-4xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
                                     JOEL ADVING
                                 </h1>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
             <FadeIn instant={true} delay={1.25} duration={2.5}>
                 <button
                     onClick={() => projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                    className="absolute text-cyan-400 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
+                    className="absolute text-cyan-400 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3 hover:bg-cyan-900 duration-100 hover:scale-105"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -74,10 +74,10 @@ const Home: NextPage = () => {
                                     <p className="lg:text-lg text-cyan-600">{project.description}</p>
                                     <p className="my-1 text-cyan-800">Stack: {project.stack.join(', ')}</p>
                                     <div className="flex space-x-3 underline text-cyan-600">
-                                        <a href={project.github}>
+                                        <a href={project.github} className="hover:text-cyan-400">
                                             <p>Github</p>
                                         </a>
-                                        <a href={project.webpage}>
+                                        <a href={project.webpage} className="hover:text-cyan-400">
                                             <p>Live Demo</p>
                                         </a>
                                     </div>
@@ -105,22 +105,22 @@ const Home: NextPage = () => {
             <section className="grid min-h-screen place-content-center bg-slate-900">
                 <div className="flex flex-col items-center my-24 xl:my-80 md:my-44 sm:my-32">
                     <FadeIn duration={1} direction="up">
-                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-3xl sm:text-4xl lg:text-5xl   text-cyan-400">
+                        <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-3xl sm:text-4xl lg:text-5xl text-cyan-400">
                             CONTACT
                         </h2>
                     </FadeIn>
                     <FadeIn duration={1} delay={0.5} direction="up">
-                        <ul className="flex flex-col items-center justify-center mt-10 space-y-6 sm:space-y-0 lg:font-thin lg:text-xl lg:space-y-0 lg:mt-28 lg:space-x-36 sm:space-x-10 sm:flex-row text-cyan-600">
+                        <ul className="flex flex-col items-center justify-center mt-10 space-y-6 sm:space-y-0 lg:font-thin lg:text-xl lg:space-y-0 lg:mt-24 lg:space-x-24 sm:space-x-10 sm:flex-row text-cyan-600">
                             <li>+46702082695</li>
-                            <li>
+                            <li className="hover:text-cyan-400">
                                 <button onClick={() => mailTo('joel.adving@gmail.com')} className="lg:font-thin">
                                     joel.adving@gmail.com
                                 </button>
                             </li>
-                            <li>
+                            <li className="hover:text-cyan-400">
                                 <a href="https://www.linkedin.com/in/joel-adving-3385571a0/">Linkedin</a>
                             </li>
-                            <li>
+                            <li className="hover:text-cyan-400">
                                 <a href="https://github.com/Joel-Adving">GitHub</a>
                             </li>
                         </ul>
@@ -129,7 +129,7 @@ const Home: NextPage = () => {
                     <FadeIn duration={1} delay={0.75} direction="up">
                         <button
                             onClick={() => heroRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                            className="lg:mt-28 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3"
+                            className="lg:mt-28 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3 hover:bg-cyan-900 duration-100 hover:scale-105"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
