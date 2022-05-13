@@ -33,7 +33,7 @@ export default function CustomHead() {
                 property="twitter:description"
                 content="Stockholm, Sweden based front-end developer with a focus on design, user experience and accessability."
             />
-            <meta property="twitter:image" content="https://www.joeladving.com/preview.png" />
+            <meta property="twitter:image" content="https://www.joeladving.com/preview.jpg" />
         </Head>
     )
 }
