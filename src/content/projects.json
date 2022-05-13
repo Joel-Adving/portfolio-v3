@@ -5,7 +5,7 @@
         "stack": ["TypeScript", "Next.js", "Riot Games API", "Firebase", "Recoil", "Tailwind CSS"],
         "webpage": "https://www.grabbarnagrus.lol/",
         "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
-        "thumbnails": ["/images/grabbarna-grus-3.png", "/images/grabbarna-grus-2.png", "/images/grabbarna-grus-1.png"]
+        "thumbnails": ["/project-thumbnails/grabbarna-grus-3.png"]
     },
     {
         "title": "Trell Flow",
@@ -13,7 +13,7 @@
         "stack": ["React", "Firebase", "vanilla css"],
         "webpage": "https://trell-flow.vercel.app/",
         "github": "https://github.com/Joel-Adving/trell-flow",
-        "thumbnails": ["/images/trell-flow-1.png", "/images/trell-flow-2.png"]
+        "thumbnails": ["/project-thumbnails/trell-flow-1.png"]
     },
     {
         "title": "VAC TRACKER",
@@ -21,7 +21,7 @@
         "stack": ["Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
         "webpage": "https://vac-list.vercel.app/",
         "github": "https://github.com/Joel-Adving/vac-list",
-        "thumbnails": ["/images/vac-list-1.png", "/images/vac-list-2.png"]
+        "thumbnails": ["/project-thumbnails/vac-list-1.png"]
     },
     {
         "title": "3D interactive music video",
@@ -29,6 +29,6 @@
         "stack": ["TypeScript", "Next.js", "Three.js", "react-three-fiber", "Tailwind CSS"],
         "webpage": "https://league-kda-3d-show.vercel.app/",
         "github": "https://github.com/Joel-Adving/league-kda-3d-show",
-        "thumbnails": ["/images/kda-1.png", "/images/kda-2.png", "/images/kda-3.png"]
+        "thumbnails": ["/project-thumbnails/kda-1.png"]
     }
 ]

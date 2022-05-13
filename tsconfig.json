@@ -15,6 +15,14 @@
         "jsx": "preserve",
         "incremental": true
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Rig.js", "src/components/Title.jsx"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "src/components/Rig.js",
+        "src/components/Title.jsx",
+        "src/components/Head.tsx",
+        "src/components/Head.tsx"
+    ],
     "exclude": ["node_modules"]
 }
