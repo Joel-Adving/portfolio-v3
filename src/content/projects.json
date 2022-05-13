@@ -9,7 +9,7 @@
     },
     {
         "title": "Trell Flow",
-        "description": "App for managing projects, big or small, group or solo.",
+        "description": "App for managing projects, big or small, group or solo. With real time ui updates from the database.",
         "stack": ["React", "Firebase", "vanilla css"],
         "webpage": "https://trell-flow.vercel.app/",
         "github": "https://github.com/Joel-Adving/trell-flow",

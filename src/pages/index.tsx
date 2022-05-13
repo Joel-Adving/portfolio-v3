@@ -8,6 +8,7 @@ import { mailTo } from '../utils/helpers'
 import { FadeIn } from '../animations/FadeIn'
 import { useGetGPUTier } from '../hooks/useGetGPUTier'
 import { useSmoothScrollPolyfill } from '../hooks/useSmoothScrollPolyfill'
+import { StaggerChildren } from '../animations/StaggerChildren'
 
 const Home: NextPage = () => {
     const projectsRef = useRef<any>()
@@ -19,12 +20,16 @@ const Home: NextPage = () => {
         <>
             <Head />
             <div className="min-h-screen">
-                <section ref={heroRef} className="relative ">
-                    {GPUTier && GPUTier === 0 ? (
-                        <FadeIn instant={true} delay={1.25} duration={2.5}>
+                <section
+                    ref={heroRef}
+                    className="h-screen transition-opacity relative bg-gradient-to-b from-black to-[#001010]"
+                >
+                    {GPUTier && GPUTier <= 1 ? (
+                        <FadeIn instant={true} delay={0} duration={2}>
                             <div className="grid min-h-screen text-center place-content-center">
                                 <div className={isMobile ? 'pb-[13vh]' : ' pb-6'}>
-                                    <h1 className="font-thin sm:tracking-[0.3em] text-center tracking-[0.2em] text-4xl sm:text-4xl lg:text-4xl xl:text-6xl text-cyan-400">
+                                    <h1 className="transition-all duration-200 font-thin  text-center tracking-[0.4em] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-cyan-400 pl-2">
+                                        {' '}
                                         JOEL ADVING
                                     </h1>
                                 </div>
@@ -34,7 +39,7 @@ const Home: NextPage = () => {
                         <SceneOne />
                     )}
                 </section>
-                <FadeIn instant={true} delay={1.25} duration={2.5}>
+                <FadeIn instant={true} delay={1} duration={2.5}>
                     <button
                         onClick={() => projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                         className="absolute text-cyan-400 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3 hover:bg-cyan-900 duration-100 hover:scale-105"
@@ -45,24 +50,38 @@ const Home: NextPage = () => {
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
+                            width={24}
+                            height={24}
                             strokeWidth={2}
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
                         </svg>
                     </button>
                 </FadeIn>
-                <div ref={projectsRef}></div>
+                <div ref={projectsRef} />
                 <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
-                    <div className="my-48 xl:my-80 md:my-60">
-                        <FadeIn duration={1} direction="up">
-                            <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-[0.25em] text-4xl sm:text-4xl lg:text-5xl xl:text-6xl text-cyan-400 md:max-w-max max-w-min mx-auto">
-                                FRONT END DEVELOPER
-                            </h2>
-                        </FadeIn>
+                    <div className="transition-all duration-200 my-72 xl:my-96 md:my-80">
+                        <div className=" space-y-1 lg:space-y-3 transition-all duration-200 font-thin lg:tracking-[0.3em] text-center tracking-[0.25em] text-3xl sm:text-4xl lg:text-5xl xl:text-5xl text-cyan-400 mx-auto">
+                            <FadeIn delay={0.2} duration={1.25} direction="up">
+                                <h2>
+                                    {'<'}FRONT{'>'}
+                                </h2>
+                            </FadeIn>
+                            <FadeIn delay={1.45} duration={1.25}>
+                                <h2>
+                                    {'{'}END{'}'}
+                                </h2>
+                            </FadeIn>
+                            <FadeIn delay={0.4} duration={1.25} direction="up">
+                                <h2>
+                                    {'</'}DEVELOPER{'>'}
+                                </h2>
+                            </FadeIn>
+                        </div>
                     </div>
                     <div className="flex flex-col w-full max-w-md px-10 mx-auto space-y-12 lg:max-w-7xl xl:space-y-80 lg:space-y-60 text-cyan-600">
                         {projects.map((project, i) => (
-                            <FadeIn key={project.title} duration={1} direction="up">
+                            <FadeIn key={project.title} duration={0.8} direction="up">
                                 <div
                                     className={
                                         i % 2 !== 0
@@ -106,13 +125,13 @@ const Home: NextPage = () => {
                 </section>
 
                 <section className="grid min-h-screen place-content-center bg-slate-900">
-                    <div className="flex flex-col items-center my-24 xl:my-80 md:my-44 sm:my-32">
-                        <FadeIn duration={1} direction="up">
+                    <div className="flex flex-col items-center my-24 transition-all duration-200 xl:my-80 md:my-44 sm:my-32">
+                        <FadeIn duration={1}>
                             <h2 className="font-thin lg:tracking-[0.4em] text-center tracking-widest text-3xl sm:text-4xl lg:text-5xl text-cyan-400">
                                 CONTACT
                             </h2>
                         </FadeIn>
-                        <FadeIn duration={1} delay={0.5} direction="up">
+                        <FadeIn duration={1} delay={0.33}>
                             <ul className="flex flex-col items-center justify-center mt-10 space-y-6 sm:space-y-0 lg:font-thin lg:text-xl lg:space-y-0 lg:mt-24 lg:space-x-24 sm:space-x-10 sm:flex-row text-cyan-600">
                                 <li>+46702082695</li>
                                 <li className="hover:text-cyan-400">
@@ -129,7 +148,7 @@ const Home: NextPage = () => {
                             </ul>
                         </FadeIn>
 
-                        <FadeIn duration={1} delay={0.75} direction="up">
+                        <FadeIn duration={1} delay={0.66}>
                             <button
                                 onClick={() => heroRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                                 className="lg:mt-28 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3 hover:bg-cyan-900 duration-100 hover:scale-105"
@@ -141,6 +160,8 @@ const Home: NextPage = () => {
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
                                     strokeWidth={2}
+                                    width={24}
+                                    height={24}
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M8 7l4-4m0 0l4 4m-4-4v18" />
                                 </svg>
