@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                         <SceneOne />
                     )}
                 </section>
-                <FadeIn instant={true} delay={1} duration={2.5}>
+                <FadeIn instant={true} delay={1} duration={1.5}>
                     <button
                         onClick={() =>
                             projectsRef.current &&
@@ -63,12 +63,12 @@ const Home: NextPage = () => {
                     <div className="transition-all duration-200 my-72 xl:my-96 md:my-80">
                         <div className=" space-y-1 lg:space-y-3 transition-all duration-200 font-thin lg:tracking-[0.3em] text-center tracking-[0.25em] text-3xl sm:text-4xl lg:text-5xl xl:text-5xl text-cyan-400 mx-auto">
                             <FadeIn delay={0.2} duration={1.5} direction="up">
-                                <h2 ref={projectsRef}>
+                                <h2>
                                     {'<'}FRONT{'>'}
                                 </h2>
                             </FadeIn>
                             <FadeIn delay={1.5} duration={1.25}>
-                                <h2>
+                                <h2 ref={projectsRef}>
                                     {'{'}END{'}'}
                                 </h2>
                             </FadeIn>
