@@ -8,11 +8,10 @@ import { mailTo } from '../utils/helpers'
 import { FadeIn } from '../animations/FadeIn'
 import { useGetGPUTier } from '../hooks/useGetGPUTier'
 import { useSmoothScrollPolyfill } from '../hooks/useSmoothScrollPolyfill'
-import { StaggerChildren } from '../animations/StaggerChildren'
 
 const Home: NextPage = () => {
-    const projectsRef = useRef<any>()
-    const heroRef = useRef<any>()
+    const projectsRef = useRef<HTMLDivElement | null>(null)
+    const heroRef = useRef<HTMLElement | null>(null)
     const { GPUTier, isMobile } = useGetGPUTier()
     useSmoothScrollPolyfill()
 
@@ -29,7 +28,6 @@ const Home: NextPage = () => {
                             <div className="grid min-h-screen text-center place-content-center">
                                 <div className={isMobile ? 'pb-[13vh]' : ' pb-6'}>
                                     <h1 className="transition-all duration-200 font-thin  text-center tracking-[0.4em] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-cyan-400 pl-2">
-                                        {' '}
                                         JOEL ADVING
                                     </h1>
                                 </div>
@@ -41,7 +39,10 @@ const Home: NextPage = () => {
                 </section>
                 <FadeIn instant={true} delay={1} duration={2.5}>
                     <button
-                        onClick={() => projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                        onClick={() =>
+                            projectsRef.current &&
+                            projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                        }
                         className="absolute text-cyan-400 translate-x-1/2 right-1/2 bottom-[8vh] border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3 hover:bg-cyan-900 duration-100 hover:scale-105"
                     >
                         <svg
@@ -58,21 +59,20 @@ const Home: NextPage = () => {
                         </svg>
                     </button>
                 </FadeIn>
-                <div ref={projectsRef} />
                 <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
                     <div className="transition-all duration-200 my-72 xl:my-96 md:my-80">
                         <div className=" space-y-1 lg:space-y-3 transition-all duration-200 font-thin lg:tracking-[0.3em] text-center tracking-[0.25em] text-3xl sm:text-4xl lg:text-5xl xl:text-5xl text-cyan-400 mx-auto">
-                            <FadeIn delay={0.2} duration={1.25} direction="up">
-                                <h2>
+                            <FadeIn delay={0.2} duration={1.5} direction="up">
+                                <h2 ref={projectsRef}>
                                     {'<'}FRONT{'>'}
                                 </h2>
                             </FadeIn>
-                            <FadeIn delay={1.45} duration={1.25}>
+                            <FadeIn delay={1.5} duration={1.25}>
                                 <h2>
                                     {'{'}END{'}'}
                                 </h2>
                             </FadeIn>
-                            <FadeIn delay={0.4} duration={1.25} direction="up">
+                            <FadeIn delay={0.6} duration={1.25} direction="up">
                                 <h2>
                                     {'</'}DEVELOPER{'>'}
                                 </h2>
@@ -150,7 +150,10 @@ const Home: NextPage = () => {
 
                         <FadeIn duration={1} delay={0.66}>
                             <button
-                                onClick={() => heroRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                                onClick={() =>
+                                    heroRef.current &&
+                                    heroRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                                }
                                 className="lg:mt-28 mt-12 text-cyan-400  border-[1px] border-cyan-400 rounded-full p-1.5 md:p-3 hover:bg-cyan-900 duration-100 hover:scale-105"
                             >
                                 <svg
