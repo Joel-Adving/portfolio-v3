@@ -17,7 +17,7 @@
     },
     {
         "title": "VAC TRACKER",
-        "description": "App for tracking cheaters vac/ban statuses of palyers I've met in the game cs:go.",
+        "description": "App for tracking cheaters vac/ban statuses of players I've met in the game cs:go.",
         "stack": ["Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
         "webpage": "https://vac-list.vercel.app/",
         "github": "https://github.com/Joel-Adving/vac-list",
