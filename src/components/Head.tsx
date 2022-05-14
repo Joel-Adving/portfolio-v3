@@ -25,7 +25,7 @@ export default function CustomHead() {
                 property="og:description"
                 content="Stockholm, Sweden based front-end developer with a focus on design, user experience and accessability."
             />
-            <meta property="og:image" content="https://www.joeladving.com/preview.png" />
+            <meta property="og:image" content="https://www.joeladving.com/preview.jpg" />
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content="https://www.joeladving.com/" />
             <meta property="twitter:title" content="Joel Adving" />
