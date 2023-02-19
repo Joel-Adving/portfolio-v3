@@ -1,9 +1,7 @@
 'use client'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Suspense, useEffect } from 'react'
-import { CameraShake, Loader, Sparkles, useDetectGPU } from '@react-three/drei'
-import { DepthOfField, EffectComposer, Noise } from '@react-three/postprocessing'
+import { CameraShake, Sparkles } from '@react-three/drei'
 import { MeshTrail } from './MeshTrail'
 import { Ground } from './Ground'
 import { Title } from './Title'
@@ -21,18 +19,12 @@ export function SceneOne() {
       {/* <Suspense fallback={null}> */}
       {inView && (
         <FadeIn className="h-screen" duration={2.5}>
-          <Canvas
-            shadows
-            dpr={[1, 2]}
-            camera={{ fov: 70, position: [0, -5, 10], rotation: [-Math.PI * 1.9, 0, 0] }}
-            // className="h-screen max-w-screen"
-          >
+          <Canvas shadows dpr={[1, 2]} camera={{ fov: 70, position: [0, -5, 10], rotation: [-Math.PI * 1.9, 0, 0] }}>
             {!inView && <DisableRender />}
             <ResponsiveCanvas />
 
             {/* Scene */}
             <color attach="background" args={[0, 0, 0]} />
-            {/* <fog attach="fog" args={['black', 0, 40]} /> */}
             <hemisphereLight args={['cyan', 'cyan']} />
 
             {/* Objects */}
@@ -41,10 +33,6 @@ export function SceneOne() {
             <MeshTrail />
 
             {/* Effects */}
-            {/* <EffectComposer multisampling={0} disableNormalPass={true}>
-              <DepthOfField target={[0, 0, -1.3]} focusDistance={0} focalLength={0.005} bokehScale={2} height={480} />
-              <Noise opacity={0.01} />
-            </EffectComposer> */}
             <Sparkles
               scale={2}
               position={[-1, -5, 9]}
@@ -99,8 +87,6 @@ export function SceneOne() {
           </Canvas>
         </FadeIn>
       )}
-      {/* </Suspense> */}
-      {/* <Loader /> */}
     </div>
   )
 }

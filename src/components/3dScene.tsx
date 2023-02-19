@@ -5,7 +5,7 @@ import { FadeIn } from './FadeIn'
 import { SceneOne } from './SceneOne'
 
 export default function ThreeDScene() {
-  const { GPUTier, isMobile } = useGetGPUTier()
+  const { GPUTier } = useGetGPUTier()
 
   return (
     <section className="h-screen transition-opacity relative bg-gradient-to-b from-black to-[#001010]">
