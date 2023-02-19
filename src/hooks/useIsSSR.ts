@@ -1,11 +1,13 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 
 export const useIsSSR = () => {
-    const [isSSR, setIsSSR] = useState(true)
+  const [isSSR, setIsSSR] = useState(true)
 
-    useEffect(() => {
-        setIsSSR(false)
-    }, [])
+  useEffect(() => {
+    setIsSSR(false)
+  }, [])
 
-    return { isSSR }
+  return { isSSR }
 }
