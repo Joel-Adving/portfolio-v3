@@ -4,12 +4,12 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Suspense, useEffect } from 'react'
 import { CameraShake, Loader, Sparkles, useDetectGPU } from '@react-three/drei'
 import { DepthOfField, EffectComposer, Noise } from '@react-three/postprocessing'
-import { MeshTrail } from '../components/MeshTrail'
-import { Ground } from '../components/Ground'
-import { Title } from '../components/Title'
-import { ResponsiveCanvas } from '../components/ResponsiveCanvas'
+import { MeshTrail } from './MeshTrail'
+import { Ground } from './Ground'
+import { Title } from './Title'
+import { ResponsiveCanvas } from './ResponsiveCanvas'
 import { useInView } from 'react-intersection-observer'
-import { FadeIn } from '../animations/FadeIn'
+import { FadeIn } from './FadeIn'
 
 const DisableRender = () => useFrame(() => null, 1000)
 

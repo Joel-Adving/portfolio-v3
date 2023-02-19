@@ -1,11 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import { SceneOne } from '../scenes/SceneOne'
+import { SceneOne } from '../components/SceneOne'
 import projects from '../content/projects.json'
 import { useRef } from 'react'
 import { mailTo } from '../utils/helpers'
-import { FadeIn } from '../animations/FadeIn'
+import { FadeIn } from '../components/FadeIn'
 import { useSmoothScrollPolyfill } from '../hooks/useSmoothScrollPolyfill'
 import ThreeDScene from '@/components/3dScene'
 import Link from 'next/link'

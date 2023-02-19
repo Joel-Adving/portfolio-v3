@@ -1,8 +1,8 @@
 'use client'
 
-import { FadeIn } from '@/animations/FadeIn'
 import { useGetGPUTier } from '@/hooks/useGetGPUTier'
-import { SceneOne } from '@/scenes/SceneOne'
+import { FadeIn } from './FadeIn'
+import { SceneOne } from './SceneOne'
 
 export default function ThreeDScene() {
   const { GPUTier, isMobile } = useGetGPUTier()

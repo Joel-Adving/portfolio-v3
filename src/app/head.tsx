@@ -35,8 +35,9 @@ export default function Head() {
       />
       <meta property="twitter:image" content="https://www.joeladving.com/preview.jpg" />
 
-      {/* <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
-      <script
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+      <Script
+        id="google-analytics"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -47,7 +48,7 @@ export default function Head() {
             });
           `
         }}
-      /> */}
+      />
     </>
   )
 }
