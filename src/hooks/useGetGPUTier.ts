@@ -4,7 +4,7 @@ import { useDetectGPU } from '@react-three/drei'
 import { useEffect, useState } from 'react'
 
 export function useGetGPUTier() {
-  const [tier, setTier] = useState<number | null>(null)
+  const [tier, setTier] = useState<number>(1)
   const [isMobile, setIsMobile] = useState<boolean | undefined>(false)
   const GPUTier = useDetectGPU()
 
@@ -13,5 +13,6 @@ export function useGetGPUTier() {
     setTier(GPUTier.tier)
     setIsMobile(GPUTier.isMobile)
   }, [GPUTier])
+
   return { GPUTier: tier, isMobile }
 }

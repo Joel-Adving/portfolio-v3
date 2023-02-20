@@ -1,8 +1,19 @@
 'use client'
 
+import { useGetGPUTier } from '@/hooks/useGetGPUTier'
 import { MeshReflectorMaterial, Plane } from '@react-three/drei'
+import { useEffect } from 'react'
 
 export function Ground() {
+  const { GPUTier } = useGetGPUTier()
+
+  let resolution
+  if (GPUTier <= 2) {
+    resolution = 2024
+  } else if (GPUTier >= 3) {
+    resolution = 3048
+  }
+
   return (
     <Plane
       args={[80, 40]}
@@ -17,11 +28,11 @@ export function Ground() {
         dithering={true}
         color={[0.015, 0.015, 0.015]}
         roughness={0.7}
-        blur={[1000, 400]} // Blur ground reflections (width, heigt), 0 skips blur
-        mixBlur={1} // How much blur mixes with surface roughness (default = 1)
+        blur={[2000, 2000]} // Blur ground reflections (width, heigt), 0 skips blur
+        mixBlur={2} // How much blur mixes with surface roughness (default = 1)
         mixStrength={80} // Strength of the reflections
         mixContrast={1} // Contrast of the reflections
-        resolution={1000} // Off-buffer resolution, lower=faster, higher=better quality, slower
+        resolution={resolution} // Off-buffer resolution, lower=faster, higher=better quality, slower
         mirror={0} // Mirror environment, 0 = texture colors, 1 = pick up env colors
         depthScale={0.01} // Scale the depth factor (0 = no depth, default = 0)
         minDepthThreshold={0.9} // Lower edge for the depthTexture interpolation (default = 0)

@@ -1,18 +1,17 @@
 import Image from 'next/image'
 import projects from '../content/projects.json'
 import { FadeIn } from '../components/FadeIn'
-import ThreeDScene from '@/components/3dScene'
+import ThreeScene from '@/components/ThreeScene'
 import Link from 'next/link'
 import MailTo from '@/components/MailToBtn'
 
 export default function Home() {
   return (
     <>
-      <ThreeDScene />
-
+      <ThreeScene />
       <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
-        <div className="mt-40 transition-all duration-200 mb-72 md:mb-80">
-          <div className=" space-y-1 lg:space-y-3 transition-all duration-200 font-thin lg:tracking-[0.4em] text-center tracking-[0.25em] text-3xl sm:text-4xl lg:text-5xl xl:text-5xl text-cyan-400 mx-auto">
+        <div className="mt-40 transition-all duration-200 mb-72 md:mb-80 lg:my-80">
+          <div className=" space-y-1 lg:space-y-3 transition-all duration-200 font-thin lg:tracking-[0.4em] text-center tracking-[0.25em] text-3xl sm:text-4xl lg:text-5xl text-cyan-400 mx-auto">
             <FadeIn delay={0.2} duration={1.5} direction="up">
               <h2>
                 {'<'}FRONT{'>'}
@@ -41,16 +40,16 @@ export default function Home() {
                 }
               >
                 <div className="flex flex-col pb-28 lg:py-20 last:pb-0">
-                  <h3 className="mt-4 mb-2 text-xl tracking-wide sm:mt-0 lg:font-thin lg:text-3xl text-cyan-400">
+                  <h3 className="mt-4 mb-3 text-xl tracking-wide sm:mt-0 lg:font-thin lg:text-3xl text-cyan-400">
                     {project.title.toUpperCase()}
                   </h3>
-                  <p className="lg:text-lg text-cyan-600">{project.description}</p>
-                  <p className="my-1 text-cyan-800">Stack: {project.stack.join(', ')}</p>
-                  <div className="flex space-x-3 underline text-cyan-600">
-                    <a href={project.github} className="hover:text-cyan-400">
+                  <p className="lg:text-md text-cyan-500">{project.description}</p>
+                  <p className="my-2 text-cyan-600">Stack: {project.stack.join(', ')}</p>
+                  <div className="flex space-x-3 underline text-cyan-400">
+                    <a href={project.github} className="hover:text-cyan-200">
                       <p>Github</p>
                     </a>
-                    <a href={project.webpage} className="hover:text-cyan-400">
+                    <a href={project.webpage} className="hover:text-cyan-200">
                       <p>Live Demo</p>
                     </a>
                   </div>
@@ -74,12 +73,12 @@ export default function Home() {
 
       <section className="grid min-h-screen place-content-center bg-slate-900">
         <div className="flex flex-col items-center my-24 transition-all duration-200 md:my-44 sm:my-32">
-          <FadeIn duration={1}>
+          <FadeIn duration={1.5}>
             <h2 className="font-thin mb-4 sm:mb-0 lg:tracking-[0.15em] text-center tracking-wide text-3xl sm:text-4xl lg:text-5xl text-cyan-400">
               CONTACT
             </h2>
           </FadeIn>
-          <FadeIn duration={1} delay={0.33}>
+          <FadeIn duration={1.5} delay={0.33}>
             <div className="flex flex-col items-center justify-center mt-4 space-y-6 sm:space-y-0 lg:font-thin lg:text-xl lg:space-y-0 lg:mt-20 lg:space-x-24 sm:space-x-10 sm:flex-row text-cyan-400">
               <p className="hover:text-cyan-300 hover:underline">+46702082695</p>
               <MailTo />

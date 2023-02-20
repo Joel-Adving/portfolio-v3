@@ -13,7 +13,7 @@ export function MeshTrail({ modifier }: any) {
     if (viewport.width < 20) return
 
     sphere.current.position.x = state.mouse.x * state.viewport.height * 3
-    sphere.current.position.y = state.mouse.y * state.viewport.height + 10
+    sphere.current.position.y = state.mouse.y * state.viewport.height + 20
     sphere.current.position.z = -20
     modifier
     //     (-(state.mouse.y * state.viewport.width) / state.viewport.height) * state.viewport.width * 0.2 - 5
@@ -22,7 +22,7 @@ export function MeshTrail({ modifier }: any) {
   return (
     <>
       <Trail
-        width={0.3}
+        width={2}
         length={4}
         color={'white'}
         attenuation={(t: number) => {

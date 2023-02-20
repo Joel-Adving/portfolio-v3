@@ -1,34 +1,34 @@
 [
-    {
-        "title": "Grabbarna Grus",
-        "description": "Web app for my group of friends that play League of Legends. Where we can track each others ranks, stats and match histories.",
-        "stack": ["TypeScript", "Next.js", "Riot Games API", "Firebase", "Recoil", "Tailwind CSS"],
-        "webpage": "https://www.grabbarnagrus.lol/",
-        "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
-        "thumbnails": ["/project-thumbnails/grabbarna-grus-3.png"]
-    },
-    {
-        "title": "Trell Flow",
-        "description": "App for managing projects, big or small, group or solo. With real time ui updates from the database.",
-        "stack": ["React", "Firebase", "vanilla css"],
-        "webpage": "https://trell-flow.vercel.app/",
-        "github": "https://github.com/Joel-Adving/trell-flow",
-        "thumbnails": ["/project-thumbnails/trell-flow-1.png"]
-    },
-    {
-        "title": "VAC TRACKER",
-        "description": "App for tracking cheaters vac/ban statuses of players I've met in the game cs:go.",
-        "stack": ["Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
-        "webpage": "https://vac-list.vercel.app/",
-        "github": "https://github.com/Joel-Adving/vac-list",
-        "thumbnails": ["/project-thumbnails/vac-list-1.png"]
-    },
-    {
-        "title": "3D interactive music video",
-        "description": "Three.js 3d interactive music video of POP/STARS by K/DA - League of Legends.",
-        "stack": ["TypeScript", "Next.js", "Three.js", "react-three-fiber", "Tailwind CSS"],
-        "webpage": "https://league-kda-3d-show.vercel.app/",
-        "github": "https://github.com/Joel-Adving/league-kda-3d-show",
-        "thumbnails": ["/project-thumbnails/kda-1.png"]
-    }
+  {
+    "title": "Grabbarna Grus",
+    "description": "Web app I made for my friends who play the game League of Legends. You can see current ladder rank/elo and match histories.",
+    "stack": ["TypeScript", "Next.js", "Riot Games API", "Firebase", "Recoil", "Tailwind CSS"],
+    "webpage": "https://www.grabbarnagrus.lol/",
+    "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
+    "thumbnails": ["/project-thumbnails/grabbarna-grus-3.png"]
+  },
+  {
+    "title": "Trell Flow",
+    "description": "App where multiple users can create and assign projects to each other.",
+    "stack": ["React", "Firebase"],
+    "webpage": "https://trell-flow.vercel.app/",
+    "github": "https://github.com/Joel-Adving/trell-flow",
+    "thumbnails": ["/project-thumbnails/trell-flow-1.png"]
+  },
+  {
+    "title": "VAC TRACKER",
+    "description": "App for tracking suspected hackers/cheaters ban statuses",
+    "stack": ["Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
+    "webpage": "https://vac-list.vercel.app/",
+    "github": "https://github.com/Joel-Adving/vac-list",
+    "thumbnails": ["/project-thumbnails/vac-list-1.png"]
+  },
+  {
+    "title": "3D interactive music video",
+    "description": "3D interactive music video of POP/STARS by K/DA - League of Legends.",
+    "stack": ["TypeScript", "Next.js", "Three.js", "react-three-fiber", "Tailwind CSS"],
+    "webpage": "https://league-kda-3d-show.vercel.app/",
+    "github": "https://github.com/Joel-Adving/league-kda-3d-show",
+    "thumbnails": ["/project-thumbnails/kda-1.png"]
+  }
 ]
