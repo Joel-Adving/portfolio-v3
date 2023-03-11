@@ -3,7 +3,7 @@
     "title": "Grabbarna Grus",
     "description": "Web app I made for my friends who play the game League of Legends. You can see current ladder rank/elo and match histories.",
     "stack": ["TypeScript", "Next.js", "Riot Games API", "Firebase", "Recoil", "Tailwind CSS"],
-    "webpage": "https://www.grabbarnagrus.lol/",
+    "webpage": "https://grabbarnagrus.lol/",
     "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
     "thumbnails": ["/project-thumbnails/grabbarna-grus-3.png"]
   },
