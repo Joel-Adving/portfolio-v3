@@ -2,7 +2,7 @@
   {
     "title": "Grabbarna Grus",
     "description": "Web app I made for my friends who play the game League of Legends. You can see current ladder rank/elo and match histories.",
-    "stack": ["TypeScript", "Next.js", "Riot Games API", "Firebase", "Recoil", "Tailwind CSS"],
+    "stack": ["Next.js", "TypeScript", "Riot Games API", "MySQL", "Prisma", "useSWR", "Tailwind CSS"],
     "webpage": "https://grabbarnagrus.lol/",
     "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
     "thumbnails": ["/project-thumbnails/grabbarna-grus-3.png"]
@@ -26,7 +26,7 @@
   {
     "title": "3D interactive music video",
     "description": "3D interactive music video of POP/STARS by K/DA - League of Legends.",
-    "stack": ["TypeScript", "Next.js", "Three.js", "react-three-fiber", "Tailwind CSS"],
+    "stack": ["Next.js", "TypeScript", "Three.js", "react-three-fiber", "Tailwind CSS"],
     "webpage": "https://league-kda-3d-show.vercel.app/",
     "github": "https://github.com/Joel-Adving/league-kda-3d-show",
     "thumbnails": ["/project-thumbnails/kda-1.png"]
