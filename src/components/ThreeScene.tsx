@@ -12,6 +12,11 @@ import { useGetGPUTier } from '@/hooks/useGetGPUTier'
 
 const DisableRender = () => useFrame(() => null, 1000)
 
+const defualtSparklesProps = {
+  matrixWorldAutoUpdate: undefined,
+  getObjectsByProperty: undefined
+}
+
 export default function ThreeScene() {
   const { ref, inView } = useInView()
   const { GPUTier } = useGetGPUTier()
@@ -52,48 +57,43 @@ export default function ThreeScene() {
                   size={0.6}
                   count={20}
                   speed={0.1}
-                  matrixWorldAutoUpdate={undefined}
-                  getObjectsByProperty={undefined}
+                  {...defualtSparklesProps}
                 />
                 <Sparkles
-                  matrixWorldAutoUpdate={undefined}
-                  getObjectsByProperty={undefined}
                   scale={2}
                   position={[1, -5, 9]}
                   color={'cyan'}
                   size={0.3}
                   count={20}
                   speed={0.1}
+                  {...defualtSparklesProps}
                 />
                 <Sparkles
-                  matrixWorldAutoUpdate={undefined}
-                  getObjectsByProperty={undefined}
                   scale={1}
                   position={[0, -4, 9]}
                   color={'cyan'}
                   size={0.3}
                   count={10}
                   speed={0.1}
+                  {...defualtSparklesProps}
                 />
                 <Sparkles
-                  matrixWorldAutoUpdate={undefined}
-                  getObjectsByProperty={undefined}
                   scale={2}
                   position={[-1, -4, 9]}
                   color={'white'}
                   size={0.6}
                   count={30}
                   speed={0.1}
+                  {...defualtSparklesProps}
                 />
                 <Sparkles
-                  matrixWorldAutoUpdate={undefined}
-                  getObjectsByProperty={undefined}
                   scale={2}
                   position={[1, -4, 9]}
                   color={'white'}
                   size={0.8}
                   count={30}
                   speed={0.1}
+                  {...defualtSparklesProps}
                 />
                 <CameraShake intensity={0.5} />
               </Canvas>

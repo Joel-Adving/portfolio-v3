@@ -12,17 +12,17 @@ export default function Home() {
       <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
         <div className="mt-40 transition-all duration-200 mb-72 md:mb-80 lg:my-80">
           <div className=" space-y-1 lg:space-y-3 transition-all duration-200 font-thin lg:tracking-[0.4em] text-center tracking-[0.25em] text-3xl sm:text-4xl lg:text-5xl text-cyan-400 mx-auto">
-            <FadeIn delay={0.2} duration={1.5} direction="up">
+            <FadeIn delay={0} duration={1.33} direction="up">
               <h2>
                 {'<'}FRONT{'>'}
               </h2>
             </FadeIn>
-            <FadeIn delay={1.5} duration={1.25}>
+            <FadeIn delay={1} duration={0.5}>
               <h2>
                 {'{'}END{'}'}
               </h2>
             </FadeIn>
-            <FadeIn delay={0.6} duration={1.25} direction="up">
+            <FadeIn delay={0.3} duration={1} direction="up">
               <h2>
                 {'</'}DEVELOPER{'>'}
               </h2>
@@ -59,6 +59,7 @@ export default function Home() {
                     <Image
                       src={project.thumbnails[0]}
                       alt="Project card"
+                      priority
                       width={1280}
                       height={720}
                       className="w-full max-w-lg rounded"
