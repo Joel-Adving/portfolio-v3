@@ -19,7 +19,7 @@
     "title": "VAC TRACKER",
     "description": "App for tracking suspected hackers/cheaters ban statuses",
     "stack": ["Next.js", "Steam API", "Firebase", "Recoil", "Tailwind CSS"],
-    "webpage": "https://vac-list.vercel.app/",
+    "webpage": "https://vac-tracker.vercel.app/",
     "github": "https://github.com/Joel-Adving/vac-list",
     "thumbnails": ["/project-thumbnails/vac-list-1.png"]
   },
