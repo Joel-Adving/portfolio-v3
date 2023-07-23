@@ -14,9 +14,9 @@ const fetchProjects = async (): Promise<
     thumbnails: string[]
   }[]
 > => {
-  return await fetch(
-    `${process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'www.joeladving.com'}/projects.json`
-  ).then((res) => res.json())
+  return await fetch(`${process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : ''}/projects.json`).then((res) =>
+    res.json()
+  )
 }
 
 export default async function Home() {
