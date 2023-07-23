@@ -1,37 +1,39 @@
 import Image from 'next/image'
-import projects from '../content/projects.json'
 import { FadeIn } from '../components/FadeIn'
 import ThreeScene from '@/components/ThreeScene'
 import Link from 'next/link'
 import MailTo from '@/components/MailToBtn'
 
-export default function Home() {
+const fetchProjects = async (): Promise<
+  {
+    title: string
+    description: string
+    stack: string[]
+    webpage: string
+    github: string
+    thumbnails: string[]
+  }[]
+> => {
+  return await fetch(
+    `${process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'www.joeladving.com'}/projects.json`
+  ).then((res) => res.json())
+}
+
+export default async function Home() {
+  const projects = await fetchProjects()
+
   return (
     <>
       <ThreeScene />
       <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
-        <div className="mt-40 transition-all duration-200 mb-72 md:mb-80 lg:my-80">
-          <div className=" space-y-1 lg:space-y-3 transition-all duration-200 font-thin lg:tracking-[0.4em] text-center tracking-[0.25em] text-3xl sm:text-4xl lg:text-5xl text-cyan-400 mx-auto">
-            <FadeIn delay={0} duration={1.33} direction="up">
-              <h2>
-                {'<'}FRONT{'>'}
-              </h2>
-            </FadeIn>
-            <FadeIn delay={1} duration={0.5}>
-              <h2>
-                {'{'}END{'}'}
-              </h2>
-            </FadeIn>
-            <FadeIn delay={0.3} duration={1} direction="up">
-              <h2>
-                {'</'}DEVELOPER{'>'}
-              </h2>
-            </FadeIn>
-          </div>
+        <div className="h-[100dvh] grid place-content-center text-cyan-400 text-4xl sm:text-5xl font-thin uppercase tracking-widest">
+          <FadeIn delay={0.15} duration={3}>
+            Projects
+          </FadeIn>
         </div>
-        <div className="flex flex-col w-full max-w-md px-10 mx-auto space-y-12 lg:max-w-5xl lg:space-y-48 text-cyan-600">
+        <div className="flex flex-col w-full max-w-md px-6 mx-auto space-y-12 lg:max-w-5xl lg:space-y-48 text-cyan-600">
           {projects.map((project, i) => (
-            <FadeIn key={project.title} duration={0.8} direction="up">
+            <FadeIn key={project.title} duration={1.2}>
               <div
                 className={
                   i % 2 !== 0
@@ -40,11 +42,11 @@ export default function Home() {
                 }
               >
                 <div className="flex flex-col pb-28 lg:py-20 last:pb-0">
-                  <h3 className="mt-4 mb-3 text-xl tracking-wide sm:mt-0 lg:font-thin lg:text-3xl text-cyan-400">
-                    {project.title.toUpperCase()}
+                  <h3 className="mb-2 text-xl tracking-wide sm:mt-0 lg:font-thin lg:text-2xl text-cyan-400">
+                    {project.title}
                   </h3>
-                  <p className="lg:text-md text-cyan-500">{project.description}</p>
-                  <p className="my-2 text-cyan-600">Stack: {project.stack.join(', ')}</p>
+                  <p className="lg:text-md text-cyan-600">{project.description}</p>
+                  <p className="my-2 text-cyan-700">{project.stack.join(', ')}</p>
                   <div className="flex space-x-3 underline text-cyan-400">
                     <a href={project.github} className="hover:text-cyan-200">
                       <p>Github</p>
@@ -62,7 +64,7 @@ export default function Home() {
                       priority
                       width={1280}
                       height={720}
-                      className="w-full max-w-lg rounded"
+                      className="w-full max-w-lg mb-6 rounded"
                     />
                   </div>
                 </a>
@@ -75,7 +77,7 @@ export default function Home() {
       <section className="grid min-h-screen place-content-center bg-slate-900">
         <div className="flex flex-col items-center my-24 transition-all duration-200 md:my-44 sm:my-32">
           <FadeIn duration={1.5}>
-            <h2 className="font-thin mb-4 sm:mb-0 lg:tracking-[0.15em] text-center tracking-wide text-3xl sm:text-4xl lg:text-5xl text-cyan-400">
+            <h2 className="mb-4 text-2xl font-thin tracking-wide text-center sm:mb-0 lg:tracking-widest sm:text-3xl lg:text-4xl text-cyan-400">
               CONTACT
             </h2>
           </FadeIn>

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Grabbarna Grus",
+    "description": "App for a small community of League of Legends players. See ladder rank, stats and match histories",
+    "stack": ["TypeScript", "Next.js", "MySQL", "Prisma", "Riot Games API", "Riot Games API", "useSWR", "Tailwind CSS"],
+    "webpage": "https://grabbarnagrus.oki.gg/",
+    "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
+    "thumbnails": ["/project-thumbnails/grabbarna-grus-3.webp"]
+  },
+  {
+    "title": "Vac Tracker",
+    "description": "App for tracking eventual VAC ban statuses for suspected CS:GO cheaters",
+    "stack": ["TypeScript", "Next.js", "Firebase", "Recoil", "Tailwind CSS", "Steam API"],
+    "webpage": "https://vac.oki.gg",
+    "github": "https://github.com/Joel-Adving/vac-list",
+    "thumbnails": ["/project-thumbnails/vac-list-1.webp"]
+  },
+  {
+    "title": "CS:GO Case Unboxer",
+    "description": "Test unbox CS:GO skin cases and souvenir packages with real odds/percentages",
+    "stack": ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "Tailwind CSS"],
+    "webpage": "https://case.oki.gg/",
+    "github": "https://github.com/Joel-Adving/csgo-case-unboxer",
+    "thumbnails": ["/project-thumbnails/csgocase.webp"]
+  },
+  {
+    "title": "3D interactive music video",
+    "description": "Interactive music video of POP/STARS by K/DA - League of Legends",
+    "stack": ["TypeScript", "Next.js", "Three.js", "react-three-fiber", "Tailwind CSS"],
+    "webpage": "https://league-kda-3d-show.vercel.app/",
+    "github": "https://github.com/Joel-Adving/league-kda-3d-show",
+    "thumbnails": ["/project-thumbnails/kda-1.webp"]
+  }
+]
