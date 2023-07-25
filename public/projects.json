@@ -2,7 +2,7 @@
   {
     "title": "Grabbarna Grus",
     "description": "App for a small community of League of Legends players. See ladder rank, stats and match histories",
-    "stack": ["TypeScript", "Next.js", "MySQL", "Prisma", "Riot Games API", "Riot Games API", "useSWR", "Tailwind CSS"],
+    "stack": ["TypeScript", "Next.js", "MySQL", "Prisma", "Riot Games API", "SWR", "Tailwind CSS"],
     "webpage": "https://grabbarnagrus.oki.gg/",
     "github": "https://github.com/Joel-Adving/grabbarna-grus-lol",
     "thumbnails": ["/project-thumbnails/grabbarna-grus-3.webp"]

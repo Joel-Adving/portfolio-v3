@@ -30,12 +30,12 @@ export default async function Home() {
     <>
       <ThreeScene />
       <section className="bg-gradient-to-b from-[#001010] via-slate-900 to-slate-900 flex flex-col">
-        <div className="h-[100dvh] grid place-content-center text-cyan-400 text-4xl sm:text-5xl font-thin uppercase tracking-widest">
+        <div className="h-[100dvh] grid place-content-center text-cyan-500 text-3xl sm:text-4xl font-thin uppercase tracking-widest">
           <FadeIn delay={0.15} duration={3}>
             Projects
           </FadeIn>
         </div>
-        <div className="flex flex-col w-full max-w-md px-6 mx-auto space-y-12 lg:max-w-5xl lg:space-y-48 text-cyan-600">
+        <div className="flex flex-col w-full max-w-md px-6 mx-auto space-y-24 lg:max-w-5xl lg:space-y-48 text-cyan-600">
           {projects.map((project, i) => (
             <FadeIn key={project.title} duration={1.2}>
               <div
@@ -45,7 +45,7 @@ export default async function Home() {
                     : 'flex lg:gap-12 flex-col-reverse lg:flex-row ml-auto justify-center lg:items-center'
                 }
               >
-                <div className="flex flex-col pb-28 lg:py-20 last:pb-0">
+                <div className="flex flex-col pb-28 lg:py-32 last:pb-0">
                   <h3 className="mb-2 text-xl tracking-wide sm:mt-0 lg:font-thin lg:text-2xl text-cyan-400">
                     {project.title}
                   </h3>
@@ -81,7 +81,7 @@ export default async function Home() {
       <section className="grid min-h-screen place-content-center bg-slate-900">
         <div className="flex flex-col items-center my-24 transition-all duration-200 md:my-44 sm:my-32">
           <FadeIn duration={1.5}>
-            <h2 className="mb-4 text-2xl font-thin tracking-wide text-center sm:mb-0 lg:tracking-widest sm:text-3xl lg:text-4xl text-cyan-400">
+            <h2 className="mb-4 text-2xl font-thin tracking-wide text-center sm:mb-0 lg:tracking-widest sm:text-3xl text-cyan-400">
               CONTACT
             </h2>
           </FadeIn>
