@@ -14,7 +14,9 @@ const fetchProjects = async (): Promise<
     thumbnails: string[]
   }[]
 > => {
-  return await fetch(`${window.location.origin}/projects.json`).then((res) => res.json())
+  return await fetch(
+    `${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://joeladving.com'}/projects.json`
+  ).then((res) => res.json())
 }
 
 export default async function Home() {
